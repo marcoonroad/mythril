@@ -1,0 +1,9 @@
+*.swp
+*.swo
+_build
+.*.un~
+*.install
+*~
+bin/.merlin
+lib/.merlin
+lib_test/.merlin

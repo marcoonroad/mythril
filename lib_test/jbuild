@@ -1,0 +1,13 @@
+(jbuild_version 1)
+
+(executables
+    ((names (rlps))
+    (modules (rlps))
+    (libraries (alcotest mythril core))))
+
+(executables
+    ((names (merkles))
+    (modules (merkles))
+    (libraries (alcotest mythril core))))
+
+;; END

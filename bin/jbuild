@@ -1,0 +1,9 @@
+(jbuild_version 1)
+
+(executables
+    ((names (mythrilc))
+    (public_names (mythrilc))
+    (package mythril)
+    (libraries (core lwt.unix))))
+
+;; END

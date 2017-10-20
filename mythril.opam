@@ -1,0 +1,28 @@
+opam-version: "1.2"
+name:         "mythril"
+version:      "0.1"
+maintainer:   "Marco Aurélio da Silva <marcoonroad@gmail.com>"
+authors:      "Marco Aurélio da Silva <marcoonroad@gmail.com>"
+bug-reports:  "https://github.com/marcoonroad/mythril/issues"
+license:      "MIT"
+homepage:     "https://github.com/marcoonroad/mythril"
+dev-repo:     "git://github.com/marcoonroad/mythril.git"
+
+available: [ ocaml-version >= "3.12" ]
+
+build: [
+    [ "jbuilder" "subst" ] {pinned}
+    [ "jbuilder" "build" "-p" name "-j" jobs ]
+]
+
+build-test: [ "jbuilder" "runtest" "-p" name "-j" jobs ]
+install:    [ make "install" ]
+remove:     [ "ocamlfind" "remove" "mythril" ]
+
+depends: [
+    "alcotest"  {test}
+    "jbuild"    {build}
+    "core"      {build}
+    "cryptokit" {build}
+]
+

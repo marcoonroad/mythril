@@ -1,0 +1,16 @@
+(jbuild_version 1)
+
+(alias
+    ((name runtest)
+    (package mythril)
+    (deps (lib_test/rlps.exe))
+    (action (run ${<}))))
+
+(alias
+    ((name runtest)
+    (package mythril)
+    (deps (lib_test/merkles.exe))
+    (action (run ${<}))))
+
+;; END
+

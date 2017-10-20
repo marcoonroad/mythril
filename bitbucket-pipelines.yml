@@ -1,0 +1,27 @@
+# This is a sample build configuration for Other.
+# Check our guides at https://confluence.atlassian.com/x/5Q4SMw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+# image: atlassian/default-image:latest
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - opam
+        script:
+          - wget https://raw.github.com/ocaml/opam/master/shell/opam_installer.sh -O - | sh -s /usr/local/bin
+          - /usr/local/bin/opam init --comp 4.05.0
+          - eval `opam config env`
+          - opam depext conf-m4.1
+          - make vendor
+          - make update-vendor
+          - make test
+          - echo "Everything is awesome!"
+
+definitions:
+  caches:
+    opam: /root/.opam
+
+# END
