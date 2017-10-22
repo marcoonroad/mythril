@@ -8,7 +8,7 @@ license:      "MIT"
 homepage:     "https://github.com/marcoonroad/mythril"
 dev-repo:     "git://github.com/marcoonroad/mythril.git"
 
-available: [ ocaml-version >= "3.12" ]
+available: [ ocaml-version >= "4.03" ]
 
 build: [
     [ "jbuilder" "subst" ] {pinned}
@@ -21,8 +21,9 @@ remove:     [ "ocamlfind" "remove" "mythril" ]
 
 depends: [
     "alcotest"  {test}
-    "jbuild"    {build}
+    "jbuilder"  {build}
     "core"      {build}
     "cryptokit" {build}
+    "lwt"       {build}
 ]
 
