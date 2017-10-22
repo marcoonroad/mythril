@@ -1,4 +1,4 @@
-# mythril
+# mythril [Work in Progress]
 
 Ethereum developer kit using OCaml.
 
